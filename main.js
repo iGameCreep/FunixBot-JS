@@ -13,9 +13,6 @@ global.client = new Client({
 
 client.config = require('./config');
 
-client.createID = require('./Fonctions/createID')
-
-require('./src/loader');
-require('./src/events');
+require('./loader');
 
 client.login(client.config.app.token);
