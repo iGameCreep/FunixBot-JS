@@ -13,6 +13,9 @@ global.client = new Client({
 
 client.config = require('./config');
 
-require('./loader');
+const loader = require('./loader')
+loader.loadevents()
+loader.loadprefixcmds()
+loader.loadslashcommands()
 
 client.login(client.config.app.token);
