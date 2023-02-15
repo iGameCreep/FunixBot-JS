@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/iGameCreep/funixbot#readme",
   "dependencies": {
-    "discord.js": "^14.1.2"
+    "discord.js": "^14.1.2",
+    "ms": "^2.1.3"
   }
 }

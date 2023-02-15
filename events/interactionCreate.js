@@ -11,9 +11,9 @@ module.exports = (client, inter) => {
 
         const permEmbed = new EmbedBuilder()
         .setColor('#ff0000')
-        .setDescription(`❌ | Tu n'as pas les premissions pour executer cette commande !`)
+        .setDescription(`❌ | Tu n'as pas les premissions requises pour executer cette commande !`)
 
-        if (!command) return inter.reply({ embeds: [ errEmbed ], ephemeral: true, }), client.slash.delete(inter.commandName)
+        if (!command) return inter.reply({ embeds: [ errEmbed ], ephemeral: true, }), client.application.commands.delete(inter.commandId)
 
         if (command.permissions && !inter.member.permissions.has(command.permissions)) return inter.reply({ embeds: [ permEmbed ], ephemeral: true, })
 

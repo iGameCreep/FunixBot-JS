@@ -22,12 +22,12 @@ const commands = readdirSync('./commands/slash').filter(file => file.endsWith('.
 console.log(`\nLoading slash commands...\n`);
 
 for (const file of commands) {
-    const command = require(`./commands/${file}`);
+    const command = require(`./commands/slash/${file}`);
     if ((command.name && command.description && command.category) || (command.name && command.description && !command.showHelp)) {
     CommandsArray.push(command);
     console.log(`-> [Loaded Command] ${command.name.toLowerCase()}`);
     client.commands.set(command.name.toLowerCase(), command);
-    delete require.cache[require.resolve(`./commands/${file}`)];
+    delete require.cache[require.resolve(`./commands/slash/${file}`)];
     } else console.log(`[Failed Command] ${command.name.toLowerCase()}`)
 };
 
@@ -45,6 +45,4 @@ for (const file of prefixcommands) {
 
 client.on('ready', (client) => {
     client.guilds.cache.get(client.config.app.guild).commands.set(CommandsArray)
-
-    console.log(`Connecté à discord en tant que ${client.user.tag} !`)
 })
