@@ -19,6 +19,7 @@ module.exports = {
         .addComponents(btn)
 
         const embed = new EmbedBuilder()
+        .setColor('Blue')
         .setTitle("Pacifista Minecraft")
         .setDescription("Serveur minecraft survie")
         .addFields([

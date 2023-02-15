@@ -20,6 +20,7 @@ module.exports = {
         )
 
         const embed = new EmbedBuilder()
+        .setColor('Blue')
         .setTitle("Pong 🏓 !")
         .setThumbnail(client.user.displayAvatarURL({dynamic: true}))
         .setDescription(`La latence de l'API est de ${Math.round(client.ws.ping)}ms 🛰️, Dernier ping calculé il y a ${ms(Date.now() - client.ws.shards.first().lastPingTimestamp, { long: true })}.`)
