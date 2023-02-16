@@ -18,4 +18,6 @@ loader.loadevents()
 loader.loadprefixcmds()
 loader.loadslashcommands()
 
+require('./server')()
+
 client.login(client.config.app.token);
